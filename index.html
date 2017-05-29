@@ -27,23 +27,26 @@
 			.altura {
 				height: 30px;
 			}
+			.padding {
+				padding-top: 70px;
+			}
 		</style>
 	</head>
 	<body>
 		<!-- BARRA DE NAVEGAÇÃO -->
 		<div class="container-fluid"> <!-- criando container -->
 			<div class="row"> <!-- criando row -->
-				<nav class="navbar bg-purple">
+				<nav class="navbar navbar-fixed-top bg-purple">
 						<div class="navbar-header">
 							<a class="navbar-brand" href="#">Contra Homofobia</a>
 						</div>
 						<ul class="nav navbar-nav navbar-right">
-							<li class="active"><a href="#">INÍCIO</a></li>
-							<li><a href="#">SOBRE</a></li>
-							<li><a href="#">EQUIPE</a></li>
-							<li><a href="#">CONTATO</a></li>
+							<li class="active"><a href="index.html#">INÍCIO</a></li>
+							<li><a href="#sobre">SOBRE</a></li>
+							<li><a href="#equipe">EQUIPE</a></li>
+							<li><a href="#contato">CONTATO</a></li>
 							<li><a href="#">BLOG</a></li>
-							<li><a href="#">ENTRAR</a></li>
+							<li><a href="html/login.html">ENTRAR</a></li>
 						</ul>									
 				</nav> 
 			</div> <!-- fechando row -->
@@ -51,7 +54,7 @@
 		<!-- BANNER -->
 		<div class="container">
 			<div class="row">
-				<img class="center-block" src="imagens/banner.png">
+				<img class="padding center-block" src="imagens/banner.png">
 			</div>
 		<br>
 		</div>
@@ -91,7 +94,7 @@
 	<!-- SOBRE O PROJETO -->
 		<div class="container"> <!-- criando container -->
 			<div class="row"> <!-- criando row -->
-				<div class="arredondar bg-purple text-center col-md-10 col-md-offset-1">
+				<div id="sobre" class="arredondar bg-purple text-center col-md-10 col-md-offset-1">
 					<h1>Sobre o Projeto</h1>
 				</div> <!-- fechando container -->				
 			</div> <!-- fechando row -->
@@ -110,7 +113,7 @@
 	<!-- EQUIPE -->
 		<div class="container"> <!-- criando container -->
 			<div class="row"> <!-- criando row -->
-				<div class=" arredondar bg-purple text-center col-md-10 col-md-offset-1">
+				<div id="equipe" class=" arredondar bg-purple text-center col-md-10 col-md-offset-1">
 					<h1>Equipe</h1>
 				</div> <!-- fechando container -->				
 			</div> <!-- fechando row -->
@@ -135,7 +138,7 @@
 		</div>
 		<div class="container"> <!-- criando container -->
 			<div class="row"> <!-- criando row -->
-				<div class="col-md-6 col-md-offset-3">
+				<div id="contato" class="col-md-6 col-md-offset-3">
 					<form>
 							<legend></legend>
 							<p>E-mail:
