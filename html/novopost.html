@@ -38,10 +38,12 @@
 			.paddingbottom {
 				padding-bottom: 200px;
 			}
+			.margintop {
+				margin-top: 200px;
+			}
 		</style>
 	</head>
-	<body>
-		
+	<body>		
 	<!-- BARRA DE NAVEGAÇÃO -->
 		<div class="container-fluid"> <!-- criando container -->
 			<div class="row"> <!-- criando row -->
@@ -50,12 +52,77 @@
 							<a class="navbar-brand" href="#">Contra Homofobia</a>
 						</div>
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#">JAINI OLIVEIRA</a></li>
+							<li><a href="atualizar.html">JAINI OLIVEIRA</a></li>
 							<li><a href="login.html">SAIR</a></li>
 						</ul>									
 				</nav> 
 			</div> <!-- fechando row -->
 		</div> <!-- fechando container -->
 	<!-- BOTÕES DE GERENCIAR POSTAGEM E NOVA POSTAGEM -->
-		<button class="padding btn"><a href="">Gerenciar Postagem</a></button>
+		<a href="usuario.html"><button class="padding btn">Gerenciar Postagem</button></a>
 		<button class="padding btn">Nova Postagem</button>
+		<br>
+		<br>
+		<br>
+	<!-- NOVO POST -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<p>NOVA POSTAGEM</p>
+				</div>
+			</div>
+		</div>	
+		<div class="container"> <!-- criando container -->
+			<div class="row"> <!-- criando row -->
+				<div class="col-md-6">
+						<input class="form-control" type="text" name="titulo" size="28" maxlength="30" placeholder="TÍTULO">
+				</div>
+				<div class="col-md-4">			
+						<select class="form-control">
+						<option>CATEGORIA</option>		
+						<option>Notícias</option>
+						<option>Informações</option>
+						</select>				
+				</div>
+				<div class="col-md-2">				
+						<select class="form-control">
+						<option>STATUS</option>		
+						<option>Publicado</option>
+						<option>Rascunho</option>
+						</select>
+				</div>
+			</div> <!-- fechando container -->
+		</div> <!-- fechando row -->
+		<br>
+		<br>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<label>Imagem Destacada</label>
+					<input type="file" class="">
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>Escreva aqui:
+					<textarea class="form-control" rows="4" cols="50" name="comment"></textarea></p>
+					<br>
+					<button class="form-control btn-success">PUBLICAR</button>
+				</div>
+			</div>
+		</div>
+	<!-- RODAPÉ -->
+		<div class="container-fluid margintop"> <!-- criando container -->
+			<div class="row"> <!-- criando row -->
+				<nav class="navbar bg-purple">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<h4>Guarde sua homofobia no armário | 2017</h4>	
+					</div>	
+				</nav> 
+			</div> <!-- fechando row -->
+		</div> <!-- fechando container -->
+	</body>
+</html>
