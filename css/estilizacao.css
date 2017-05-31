@@ -1,0 +1,25 @@
+p {
+	font-size: 16pt;
+}
+a , h1, h2 , h3 , h4 {
+    color: white;
+}
+.card-cores {
+	background-color: purple;
+	height: 300px;
+}
+.bg-purple {
+	background-color: purple;
+}
+.arredondar {
+	border-radius: 5px;
+}
+.altura {
+	height: 30px;
+}
+.padding {
+	padding-top: 70px;
+}
+.margintop {
+	margin-top: 200px;
+}
