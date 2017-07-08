@@ -7,6 +7,19 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/estilizacao.css">
 		<meta charset="utf-8">
+		<style type="text/css">
+			#esconder, #esconde {
+				color: red;
+				display: none;
+			}
+			#banner {
+				width: 500px;
+				height: 500px;
+				padding-top: 100px;
+				padding-left: 150px;
+
+			}
+		</style>
 		<title>.:: Contra Homofobia ::.</title>		
 	</head>
 	<body>
@@ -30,11 +43,17 @@
 		</div> <!-- fechando container -->
 		<!-- BANNER -->
 		<div class="container">
-			<div class="row">
-				<img class="padding center-block" src="imagens/banner.png">
+			<div id="banner" class="row">
+<!-- 				<img class="padding center-block" src="imagens/banner.png"> -->
+				<input type="button" name="bot1" value="Anterior">
+				<input type="button" name="bot2" value="Próxima"><br>
+				<img id="img1" src="imagens/banner01.jpg"
+					style="position: absolute;" >
+				<img id="img2" src="imagens/banner.png"
+					style="display: none; position: absolute;" >  
 			</div>
-		<br>
 		</div>
+		<br>
 		<!-- CARDS -->
 		<div class="container"> <!-- criando container -->
 			<div class="row">	<!-- criando row -->
@@ -80,7 +99,7 @@
 		<div class="container"> <!-- criando container -->
 			<div class="row"> <!-- criando row -->
 				<div class=" arredondar bg-purple text-center col-md-6 col-md-offset-3">
-					<h3>Conscientizar a população, mostrando que todas as pessoas posuem o direito de relacionarem com quem quiserem, indepente do gênero.</h3>
+					<h3>Conscientizar a população, mostrando que todas as pessoas possuem o direito de relacionarem com quem quiserem, indepente do gênero.</h3>
 				</div> <!-- fechando container -->				
 			</div> <!-- fechando row -->
 		</div>
@@ -116,12 +135,12 @@
 		<div class="container"> <!-- criando container -->
 			<div class="row"> <!-- criando row -->
 				<div id="contato" class="col-md-6 col-md-offset-3">
-					<form>
+					<form action="enviado.html" onsubmit="return valida();">
 							<legend></legend>
 							<p>E-mail:
-							<input class="form-control" type="text" name="email" size="28" maxlength="30" placeholder="Digite seu E-mail"></p>
+							<input id="email" class="form-control" type="text" name="email" size="28" maxlength="30" placeholder="Digite seu E-mail" onblur="validaemail(this);"></p><div id="esconder">*Campo de preenchimento obrigatório</div>
 							<p>Digite sua mensagem:
-							<textarea class="form-control" rows="4" cols="50" name="comment"></textarea></p>
+							<textarea id="mensagem" class="form-control" rows="4" cols="50" name="comment" onblur="validamensagem(this);"></textarea></p><div id="esconde">*Campo de preenchimento obrigatório</div>
 							<input type="submit" name="Enviar">
 					</form>
 				</div>				
@@ -138,5 +157,90 @@
 				</nav> 
 			</div> <!-- fechando row -->
 		</div> <!-- fechando container -->
+			<script type="text/javascript" src="html/jquery.js"></script>
+			
+			<script type="text/javascript">
+				$(document).ready(
+					function(){
+						$('input[name="bot1"]').click(
+							function(){
+								$('img').fadeOut('slow');
+								$("#img1").fadeIn("slow");
+							}	
+						);
+						$('input[name="bot2"]').click(
+							function(){
+								$('img').fadeOut('slow');
+								$("#img2").fadeIn("slow");
+							}	
+						);
+					}
+				);
+			</script> 
+
+			<script type="text/javascript">	
+			function validaemail(){
+				var valor = document.getElementById('email').value;
+				if (valor.length==0) {
+					document.getElementById('esconder').style.display = "initial";
+					return false;
+				} else {
+					document.getElementById('esconder').style.display = "none";
+					return true; 
+				}
+			}
+			function validamensagem(){
+				var valor = document.getElementById('mensagem').value;
+				if (valor.length==0) {
+					document.getElementById('esconde').style.display = "initial";
+					return false;
+				} else {
+					document.getElementById('esconde').style.display = "none";
+					return true; 
+				}
+			}
+			function valida(){
+				var retorno = validaemail()&&validamensagem();
+				if (retorno) {
+					alert("Sua mensagem foi enviada com sucesso! Em breve entraremos em contato.");
+				}
+				return retorno;
+			}
+
+			// function entrar(){
+			// 	var nome = document.getElementById('email').value;
+			// 	var tamanho = nome.length;
+			// 	contador = 0;
+			// 	while(contador<tamanho){
+			// 		if (nome[contador]=="@"){
+			// 			return true;
+			// 		}
+			// 		contador++;
+			// 	}
+			// 	alert("Não é e-mail válido")
+			// 	return false;
+
+			// }
+
+			$(document).ready(
+				function(){
+					$("#email").blur(
+						function(){
+							var nome = document.getElementById('email').value;
+							var tamanho = nome.length;
+							contador = 0;
+							while(contador<tamanho){
+								if (nome[contador]=="@"){
+									return true;
+								}
+								contador++;
+							}
+							alert("Não é e-mail válido");
+							return false;
+						}						
+					);
+				}
+			);
+			</script>
 	</body>
 </html>
